@@ -4,36 +4,40 @@ import org.jsoup.nodes.Element;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Task1 {
 
+    private static List<Flight> flights;
+    private static List<Flight> cheapestFlights;
 
-    private static String appendString(int day, double price, String departAir, String departTime, String arriveAir, String arriveTime, String toPrint)
-    {
-        toPrint += "Departure day: " + day + "\n" + "Price: " + price + " departure airport: " + departAir
-                + " departure time: " + departTime + " arrival airport: " + arriveAir + " arrival time: "
-                + arriveTime + "\n";
-        return toPrint;
-    }
-
-    private static String addLowest(int day, double price, String departAir, String departTime, String arriveAir, String arriveTime, String toPrint)
-    {
-        toPrint += "Departure day of cheapest flight: " + day + "\n" + "Price: " + price + " departure airport: " + departAir
-                + " departure time: " + departTime + " arrival airport: " + arriveAir + " arrival time: "
-                + arriveTime + "\n";
-        return toPrint;
-    }
-
-    private static void printToFile(String toPrint)
+    private static void printToFile()
     {
         try{
             BufferedWriter writer = new BufferedWriter(new FileWriter("AllFlights.txt"));
-            writer.write(toPrint);
+
+            if(!flights.isEmpty()) {
+                writer.write("All the flights:\n");
+
+                for (Flight flight : flights) {
+                    writer.write(flight.toString());
+                }
+
+                writer.write("All the cheapest flights and their info:\n");
+
+                for (Flight flight : cheapestFlights) {
+                    writer.write(flight.toString());
+                }
+
+            }
+            else
+                writer.write("No flights were found\n");
 
             writer.close();
         }
         catch (Exception e) {
-            System.out.println("Exception in writing thread: " + e);
+            System.out.println("Exception in writing function: " + e);
         }
     }
 
@@ -42,10 +46,9 @@ public class Task1 {
                 "https://www.norwegian.com/uk/ipc/availability/avaday?D_City=OSL&A_City=RIX&TripType=1&D_Day=";
         final String urlSecondPart =
                 "&D_Month=201911&D_SelectedDay=01&R_Day=03&R_Month=201911&R_SelectedDay=03&IncludeTransit=false&AgreementCodeFK=-1&CurrencyCode=EUR&rnd=61083&processid=76875&mode=ab";
-        String toPrint = "";
-        int lowestPriceDay =-1;
         double lowestPrice = -1;
-        String lowDepartAir ="", lowDepartTime ="", lowArrAir ="", lowArrTime ="";
+        flights = new ArrayList<>();
+        cheapestFlights = new ArrayList<>();
 
         try{
             Document document;
@@ -64,7 +67,6 @@ public class Task1 {
                     placeHoldDep =row.select(".depdest").text();
 
                     if(!placeHoldPri.equals("")){
-                       // System.out.println("placeholderis: " + placeHoldPri);
                         arrival =row.select(".arrdest").text();
                         price = Double.parseDouble(placeHoldPri.replace(",", ""));
                         departure = placeHoldDep;
@@ -75,35 +77,31 @@ public class Task1 {
                         arrAir = row.select(".arrdest").text();
                         System.out.println("Departure airport: " + depAir + " arrival airport: " + arrAir);
                         if (lowestPrice == -1) {
+                            cheapestFlights = new ArrayList<>();
+                            cheapestFlights.add(new Flight(i, price, depAir, departure, arrAir, arrival));
                             lowestPrice = price;
-                            lowestPriceDay = i;
-                            lowArrAir = arrAir;
-                            lowArrTime =arrival;
-                            lowDepartAir =depAir;
-                            lowDepartTime =departure;
                         }
                         if (price<lowestPrice) {
                             lowestPrice = price;
-                            lowestPriceDay = i;
-                            lowArrAir = arrAir;
-                            lowArrTime =arrival;
-                            lowDepartAir =depAir;
-                            lowDepartTime =departure;
+                            cheapestFlights = new ArrayList<>();
+                            cheapestFlights.add(new Flight(i, price, depAir, departure, arrAir, arrival));
                         }
-                        toPrint = appendString(i, price, depAir, departure, arrAir, arrival, toPrint);
+                        else if (price==lowestPrice)
+                            cheapestFlights.add(new Flight(i, price, depAir, departure, arrAir, arrival));
+
+                        flights.add(new Flight(i, price, depAir, departure, arrAir, arrival));
                     } //else if
 
                 }// for each
 
             }// for all days
 
-            toPrint = addLowest(lowestPriceDay, lowestPrice, lowDepartAir, lowDepartTime, lowArrAir, lowArrTime, toPrint);
         }
         catch (Exception e)
         {
             System.out.println("Exception was thrown in main method: " + e);
         }
 
-        printToFile(toPrint);
+        printToFile();
     }
 }
