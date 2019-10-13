@@ -56,7 +56,6 @@ public class Task1 {
             {
                 document = Jsoup.connect(urlFirstPart + i + urlSecondPart).get();
 
-                System.out.println("Prices of day: " + i);
                 double price = -2;
                 String departure = "", arrival = "", depAir, arrAir;
                 String placeHoldPri, placeHoldDep;
@@ -70,12 +69,10 @@ public class Task1 {
                         arrival =row.select(".arrdest").text();
                         price = Double.parseDouble(placeHoldPri.replace(",", ""));
                         departure = placeHoldDep;
-                        System.out.println("Price: " + price + " departure: " + departure + " arrival: " + arrival);
                     }
                     else if (!placeHoldDep.equals("") && price != -2){
                         depAir = placeHoldDep;
                         arrAir = row.select(".arrdest").text();
-                        System.out.println("Departure airport: " + depAir + " arrival airport: " + arrAir);
                         if (lowestPrice == -1) {
                             cheapestFlights = new ArrayList<>();
                             cheapestFlights.add(new Flight(i, price, depAir, departure, arrAir, arrival));
