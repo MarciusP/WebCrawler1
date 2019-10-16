@@ -12,6 +12,7 @@ public class Task1 {
     private static List<Flight> flights;
     private static List<Flight> cheapestFlights;
 
+    //Prints all the flights and cheapest flights to file
     private static void printToFile()
     {
         try{
@@ -46,24 +47,27 @@ public class Task1 {
                 "https://www.norwegian.com/uk/ipc/availability/avaday?D_City=OSL&A_City=RIX&TripType=1&D_Day=";
         final String urlSecondPart =
                 "&D_Month=201911&D_SelectedDay=01&R_Day=03&R_Month=201911&R_SelectedDay=03&IncludeTransit=false&AgreementCodeFK=-1&CurrencyCode=EUR&rnd=61083&processid=76875&mode=ab";
-        double lowestPrice = -1;
+        double lowestPrice = -1; // price is set to -1 to register first flight encountered
         flights = new ArrayList<>();
         cheapestFlights = new ArrayList<>();
 
         try{
             Document document;
+            //goes through required days
             for(int i = 1; i<=30; i++)
             {
                 document = Jsoup.connect(urlFirstPart + i + urlSecondPart).get();
+                //Get document for day i from url
 
                 double price = -2;
                 String departure = "", arrival = "", depAir, arrAir;
                 String placeHoldPri, placeHoldDep;
 
+                //goes through table rows and gets required elements by id or name
                 for (Element row : document.select("table.avadaytable tr"))
                 {
                     placeHoldPri = row.select(".standardlowfare.fareselect").text();
-                    placeHoldDep =row.select(".depdest").text();
+                    placeHoldDep = row.select(".depdest").text();
 
                     if(!placeHoldPri.equals("")){
                         arrival =row.select(".arrdest").text();

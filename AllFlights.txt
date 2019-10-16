@@ -1,0 +1,82 @@
+All the flights:
+Departure day: 1
+Price: 63.87 departure airport: Oslo-Gardermoen departure time: 11:20 arrival airport: Riga arrival time: 13:50
+Departure day: 2
+Price: 41.78 departure airport: Oslo-Gardermoen departure time: 07:45 arrival airport: Riga arrival time: 10:15
+Departure day: 3
+Price: 41.78 departure airport: Oslo-Gardermoen departure time: 11:00 arrival airport: Riga arrival time: 13:30
+Departure day: 3
+Price: 41.78 departure airport: Oslo-Gardermoen departure time: 19:55 arrival airport: Riga arrival time: 22:25
+Departure day: 4
+Price: 41.78 departure airport: Oslo-Gardermoen departure time: 11:20 arrival airport: Riga arrival time: 13:50
+Departure day: 5
+Price: 41.78 departure airport: Oslo-Gardermoen departure time: 11:20 arrival airport: Riga arrival time: 13:50
+Departure day: 6
+Price: 41.78 departure airport: Oslo-Gardermoen departure time: 11:20 arrival airport: Riga arrival time: 13:50
+Departure day: 7
+Price: 47.01 departure airport: Oslo-Gardermoen departure time: 11:10 arrival airport: Riga arrival time: 13:40
+Departure day: 7
+Price: 41.78 departure airport: Oslo-Gardermoen departure time: 20:05 arrival airport: Riga arrival time: 22:35
+Departure day: 8
+Price: 63.87 departure airport: Oslo-Gardermoen departure time: 11:20 arrival airport: Riga arrival time: 13:50
+Departure day: 9
+Price: 41.78 departure airport: Oslo-Gardermoen departure time: 07:45 arrival airport: Riga arrival time: 10:15
+Departure day: 10
+Price: 41.78 departure airport: Oslo-Gardermoen departure time: 11:00 arrival airport: Riga arrival time: 13:30
+Departure day: 10
+Price: 36.54 departure airport: Oslo-Gardermoen departure time: 19:55 arrival airport: Riga arrival time: 22:25
+Departure day: 11
+Price: 41.78 departure airport: Oslo-Gardermoen departure time: 11:20 arrival airport: Riga arrival time: 13:50
+Departure day: 12
+Price: 36.54 departure airport: Oslo-Gardermoen departure time: 11:20 arrival airport: Riga arrival time: 13:50
+Departure day: 13
+Price: 41.78 departure airport: Oslo-Gardermoen departure time: 11:20 arrival airport: Riga arrival time: 13:50
+Departure day: 14
+Price: 53.4 departure airport: Oslo-Gardermoen departure time: 11:10 arrival airport: Riga arrival time: 13:40
+Departure day: 14
+Price: 53.4 departure airport: Oslo-Gardermoen departure time: 20:05 arrival airport: Riga arrival time: 22:35
+Departure day: 15
+Price: 74.34 departure airport: Oslo-Gardermoen departure time: 11:20 arrival airport: Riga arrival time: 13:50
+Departure day: 16
+Price: 41.78 departure airport: Oslo-Gardermoen departure time: 07:45 arrival airport: Riga arrival time: 10:15
+Departure day: 17
+Price: 41.78 departure airport: Oslo-Gardermoen departure time: 11:00 arrival airport: Riga arrival time: 13:30
+Departure day: 17
+Price: 41.78 departure airport: Oslo-Gardermoen departure time: 19:55 arrival airport: Riga arrival time: 22:25
+Departure day: 18
+Price: 41.78 departure airport: Oslo-Gardermoen departure time: 11:20 arrival airport: Riga arrival time: 13:50
+Departure day: 19
+Price: 41.78 departure airport: Oslo-Gardermoen departure time: 11:20 arrival airport: Riga arrival time: 13:50
+Departure day: 20
+Price: 41.78 departure airport: Oslo-Gardermoen departure time: 11:20 arrival airport: Riga arrival time: 13:50
+Departure day: 21
+Price: 47.01 departure airport: Oslo-Gardermoen departure time: 11:10 arrival airport: Riga arrival time: 13:40
+Departure day: 21
+Price: 41.78 departure airport: Oslo-Gardermoen departure time: 20:05 arrival airport: Riga arrival time: 22:35
+Departure day: 22
+Price: 63.87 departure airport: Oslo-Gardermoen departure time: 11:20 arrival airport: Riga arrival time: 13:50
+Departure day: 23
+Price: 41.78 departure airport: Oslo-Gardermoen departure time: 07:45 arrival airport: Riga arrival time: 10:15
+Departure day: 24
+Price: 41.78 departure airport: Oslo-Gardermoen departure time: 11:00 arrival airport: Riga arrival time: 13:30
+Departure day: 24
+Price: 41.78 departure airport: Oslo-Gardermoen departure time: 19:55 arrival airport: Riga arrival time: 22:25
+Departure day: 25
+Price: 41.78 departure airport: Oslo-Gardermoen departure time: 11:20 arrival airport: Riga arrival time: 13:50
+Departure day: 26
+Price: 36.54 departure airport: Oslo-Gardermoen departure time: 11:20 arrival airport: Riga arrival time: 13:50
+Departure day: 27
+Price: 41.78 departure airport: Oslo-Gardermoen departure time: 11:20 arrival airport: Riga arrival time: 13:50
+Departure day: 28
+Price: 53.4 departure airport: Oslo-Gardermoen departure time: 11:10 arrival airport: Riga arrival time: 13:40
+Departure day: 28
+Price: 53.4 departure airport: Oslo-Gardermoen departure time: 20:05 arrival airport: Riga arrival time: 22:35
+Departure day: 30
+Price: 41.78 departure airport: Oslo-Gardermoen departure time: 07:45 arrival airport: Riga arrival time: 10:15
+All the cheapest flights and their info:
+Departure day: 10
+Price: 36.54 departure airport: Oslo-Gardermoen departure time: 19:55 arrival airport: Riga arrival time: 22:25
+Departure day: 12
+Price: 36.54 departure airport: Oslo-Gardermoen departure time: 11:20 arrival airport: Riga arrival time: 13:50
+Departure day: 26
+Price: 36.54 departure airport: Oslo-Gardermoen departure time: 11:20 arrival airport: Riga arrival time: 13:50
